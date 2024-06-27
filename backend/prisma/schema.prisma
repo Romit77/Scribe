@@ -19,7 +19,7 @@ model User {
   username String @unique
   name String
   password String
-  posts Post[]
+  posts Post[]  //many to one
 }
 
 model Post{
