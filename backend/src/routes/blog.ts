@@ -32,7 +32,7 @@ blogRouter.use("/*", async (c, next) => {
   }
 });
 
-blogRouter.post("/", async (c) => {
+blogRouter.post("/create", async (c) => {
   const body = await c.req.json();
   const { success } = createBlogInput.safeParse(body);
   if (!success) {
@@ -92,7 +92,6 @@ blogRouter.get("/bulk", async (c) => {
     datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate());
   const blogs = await prisma.post.findMany();
-
   return c.json({
     blogs,
   });
@@ -120,5 +119,3 @@ blogRouter.get("/:id", async (c) => {
     return c.text("error at getting blogs route");
   }
 });
-
-//1 9 01
