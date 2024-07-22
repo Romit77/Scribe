@@ -12,4 +12,8 @@ const app = new Hono<{
 app.route("/api/v1/user", userRouter);
 app.route("/api/v1/blog", blogRouter);
 
+app.notFound((c) => {
+  return c.text("Invalid route", 404);
+});
+
 export default app;
