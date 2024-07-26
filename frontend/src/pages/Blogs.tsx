@@ -1,15 +1,15 @@
-// import { Appbar } from "../components/Appbar";
+import AppBar from "../components/AppBar";
 import { BlogCard } from "../components/BlogCard";
 // import { BlogSkeleton } from "../components/BlogSkeleton";
-// import { useBlogs } from "../hooks";
+import { useBlogs } from "../hooks";
 
 export const Blogs = () => {
-  // const { loading, blogs } = useBlogs();
+  const { loading, blogs } = useBlogs();
 
   if (loading) {
     return (
       <div>
-        {/* <Appbar /> */}
+        <AppBar />
         <div className="flex justify-center">
           <div>
             {/* <BlogSkeleton />
@@ -17,6 +17,7 @@ export const Blogs = () => {
             <BlogSkeleton />
             <BlogSkeleton />
             <BlogSkeleton /> */}
+            LOADING....
           </div>
         </div>
       </div>
@@ -25,7 +26,7 @@ export const Blogs = () => {
 
   return (
     <div>
-      {/* <Appbar /> */}
+      <AppBar />
       <div className="flex justify-center">
         <div>
           {blogs.map((blog) => (
@@ -34,7 +35,7 @@ export const Blogs = () => {
               authorName={blog.author.name || "Anonymous"}
               title={blog.title}
               content={blog.content}
-              publishedDate={"2nd Feb 2024"}
+              publishedDate={"26 June 2024"}
             />
           ))}
         </div>
