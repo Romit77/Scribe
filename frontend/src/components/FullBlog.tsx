@@ -1,8 +1,12 @@
-import { useBlog, useBlogs } from "../hooks";
 import AppBar from "./AppBar";
 import { Avatar } from "./BlogCard";
+import { Blog } from "../hooks";
 
-export const FullBlog = ({ blog }: { blog: Blog }) => {
+export const FullBlog = ({ blog }: { blog: Blog | undefined }) => {
+  if (!blog) {
+    return <div>Blog not found</div>;
+  }
+
   return (
     <div>
       <AppBar />

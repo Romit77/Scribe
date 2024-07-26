@@ -11,9 +11,9 @@ interface Blogs {
   };
 }
 
-interface Blog {
-  content: string;
+export interface Blog {
   title: string;
+  content: string;
   id: number;
   author: {
     name: string;
@@ -33,7 +33,7 @@ export const useBlog = ({ id }: { id: string }) => {
         },
       })
       .then((response) => {
-        setBlog(response.data.blogs);
+        setBlog(response.data.blog);
         setLoading(false);
       });
   }, [id]);
