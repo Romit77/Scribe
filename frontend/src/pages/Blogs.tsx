@@ -2,6 +2,7 @@ import AppBar from "../components/AppBar";
 import { BlogCard } from "../components/BlogCard";
 // import { BlogSkeleton } from "../components/BlogSkeleton";
 import { useBlogs } from "../hooks";
+import { Toaster } from "react-hot-toast";
 
 export const Blogs = () => {
   const { loading, blogs } = useBlogs();
@@ -25,21 +26,24 @@ export const Blogs = () => {
   }
 
   return (
-    <div>
-      <AppBar />
-      <div className="flex justify-center">
-        <div>
-          {blogs.map((blog) => (
-            <BlogCard
-              id={blog.id}
-              authorName={blog.author.name || "Anonymous"}
-              title={blog.title}
-              content={blog.content}
-              publishedDate={"26 June 2024"}
-            />
-          ))}
+    <>
+      <Toaster />
+      <div>
+        <AppBar />
+        <div className="flex justify-center">
+          <div>
+            {blogs.map((blog) => (
+              <BlogCard
+                id={blog.id}
+                authorName={blog.author.name || "Anonymous"}
+                title={blog.title}
+                content={blog.content}
+                publishedDate={"26 June 2024"}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };

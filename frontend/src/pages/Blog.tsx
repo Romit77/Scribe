@@ -17,4 +17,4 @@ export default function Blog() {
   );
 }
 
-// 1 46 10
+// 1 54 40
