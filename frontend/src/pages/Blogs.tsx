@@ -1,6 +1,6 @@
 import AppBar from "../components/AppBar";
 import { BlogCard } from "../components/BlogCard";
-// import { BlogSkeleton } from "../components/BlogSkeleton";
+import BlogSkeleton from "../components/BlogSkeleton";
 import { useBlogs } from "../hooks";
 import { Toaster } from "react-hot-toast";
 
@@ -13,12 +13,10 @@ export const Blogs = () => {
         <AppBar />
         <div className="flex justify-center">
           <div>
-            {/* <BlogSkeleton />
             <BlogSkeleton />
             <BlogSkeleton />
             <BlogSkeleton />
-            <BlogSkeleton /> */}
-            LOADING....
+            <BlogSkeleton />
           </div>
         </div>
       </div>
